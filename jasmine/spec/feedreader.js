@@ -28,6 +28,7 @@ $(function() {
 
         //Test to be sure that url's are defined and that it is a url
         it('url defined and not empty',function() {
+
           allFeeds.forEach(function(feed) {
             expect(feed.url).toBeDefined();
             expect(feed.url).not.toBe("");
@@ -43,7 +44,9 @@ $(function() {
         //Test that a name is present in the allFeeds list, it is defined, and in
         //the correct format
         it('name is defined and not empty',function() {
+
           allFeeds.forEach(function(feed) {
+
             expect(feed.name).toBeDefined();
             expect(feed.name).not.toBe("");
             expect(feed.name).not.toBe(" ");
@@ -55,7 +58,6 @@ $(function() {
     });
 
     describe('The menu', function() {
-
 
 //Test that the menu changes visibility when clicked
       it('changes visibility when clicked', function() {
@@ -81,11 +83,11 @@ $(function() {
         });
 //Check if at least one entry element is in the feed after load.
       it('entry element is in the feed container after load', function() {
+
         var feeds = $('.feed .entry').length;
         expect(feeds).toBeDefined();
         expect(feeds).toBeGreaterThan(0);
       });
-
     });
 
     describe('New Feed Selection', function() {
@@ -109,5 +111,4 @@ $(function() {
           expect(firstFeed).not.toEqual(secondFeed);
       });
     });
-
 }());
